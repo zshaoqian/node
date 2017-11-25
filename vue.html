@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<!--
+  mvvm  数据 v 视图   双向数据绑定
+  mvvm mvc多了一层功能
+  前端的个 m数据 v视图 c 控制   框架  mvvm
+
+  控制器->路由 ()  相应的数据 呈现到视图里面
+         php  nodejs
+
+         指令 vue提供的具有特殊意义的一些属性
+
+         自定义指令
+-->
+  <div class="vue">
+      <input type="text" v-model="firstName">
+      <input type="text" v-model="lastName">
+      <input type="text" v-model="enName">
+      {{otherName}}
+  </div>
+
+<script>
+
+
+/*
+*
+*  to do list  代办事项列表
+* */
+    var vm=new Vue({
+            el:".vue",
+            data:{
+                firstName:"岳",
+                lastName:"三",
+                enName:"jason",
+            },
+        /*
+            methods:{
+                otherName(){
+                    return this.firstName+this.enName;
+                }
+            }
+         */
+        computed:{
+            otherName(){
+                console.log(1);
+                return this.firstName+this.enName;
+            }
+        },
+        watch:{
+
+        }
+
+
+    })
+</script>
+</body>
+</html>

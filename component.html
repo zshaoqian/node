@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script src="components.js"></script>
+    <link rel="stylesheet" href="components.css">
+</head>
+<body>
+    <div id="root">
+
+
+        <custom-menu :menu-data="menuData"></custom-menu>
+    </div>
+
+    <script>
+        new Vue({
+            el:"#root",
+            data:{
+                menuData:[
+                    {
+                        title:"a",flag:true,
+                        child:[
+                            {title:"1-1",flag:true},
+                            {title:"1-2",flag:true},
+                        ]
+                    },
+                    {
+                        title:"b",flag:true,
+                        child:[
+                            {title:"2-1",flag:true},
+                            {
+                                title:"2-2",
+                                flag:true,
+                                child:[
+                                    {
+                                        title:"2-2-1",
+                                        flag:true
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        })
+
+    </script>
+</body>
+</html>

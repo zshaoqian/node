@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+  <div>
+      1
+  </div>
+  <input type="button" value="添加" onclick="add()">
+  <script>
+
+      var div=document.querySelector("div");
+      /*
+
+        div.onclick=function(){
+            div.innerHTML=div.innerHTML*1+1;
+        }
+
+        */
+
+      Object.defineProperty(div,"add",{
+          set(val){
+                div.innerHTML=val;
+          }
+      })
+
+      function add(){
+            div.add=10;
+      }
+  </script>
+</body>
+</html>
